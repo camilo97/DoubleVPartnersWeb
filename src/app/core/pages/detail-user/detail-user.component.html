@@ -1,0 +1,37 @@
+<div class="title">
+    <h3>Usuario Seleccionado:</h3>
+</div>
+
+<div *ngIf="data$ | async as data">
+    <i [class]="faGithub"></i>
+    <div class="row">
+        <div class=" col-md-4">
+            <img [src]="data.img" height="200" width="200" class="avatar user-avatar rounded-circle" alt="..." />
+        </div>
+        <div class="col-md-6">
+            <div class="row">
+                <div class="col-md-12">
+                    <h3>{{ data.name }}</h3>
+                    <h5>{{ data.login }} - {{ data.id }}</h5>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-md-4">
+                    <a [href]="data.gitUrl" target="_blank" class="btn btn-outline-primary btn-rounded">
+                        <fa-icon [icon]="faGithub"></fa-icon> GitHub</a>
+                </div>
+                <div class="col-md-4">
+                    <button type="button" class="btn btn-primary" data-toggle="tooltip" data-placement="bottom" title="Seguidores">
+                       <fa-icon [icon]="faPeopleGroup"></fa-icon> <span class="badge badge-light">{{ data.following }}</span>
+                    </button>
+                </div>
+                <div class="col-md-4">
+                    <button type="button" class="btn btn-primary" data-toggle="tooltip" data-placement="bottom" title="Siguiendo">
+                        <fa-icon [icon]="faPeopleArrowsLeftRight"></fa-icon> <span class="badge badge-light">{{ data.following }}</span>
+                     </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

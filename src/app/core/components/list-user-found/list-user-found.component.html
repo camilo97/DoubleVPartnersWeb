@@ -1,0 +1,21 @@
+<div *ngIf="data$ | async as data">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Usuario</th>
+                <th scope="col">id</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr [routerLink]="['/core/detail-user/', item.login]" *ngFor="let item of data; let i = index">
+                <th scope="row">{{i + 1}}</th>
+                <td>
+                    <img class="img-fluid  rounded-circle" [src]="item.img" style="width: 20px" />
+                    {{ item.login }}
+                </td>
+                <th>{{ item.id }}</th>
+            </tr>
+        </tbody>
+    </table>
+</div>

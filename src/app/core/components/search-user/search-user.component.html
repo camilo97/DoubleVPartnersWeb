@@ -1,0 +1,19 @@
+<h4 style="padding: 1%;">Digite el usuario que desea buscar</h4>
+<form [formGroup]="form">
+    <div class="row">
+        <div class="col-md-8">
+            <input class="form-control" formControlName="SEARCH" placeholder="Ingrese un usuario" type="text">
+        </div>
+        <div class="col-md-4">
+            <button class="btn btn-primary btn-rounded" (click)="SearchUsers()">
+                <fa-icon [icon]="faSearchengin"></fa-icon> Buscar</button>
+        </div>
+       
+    </div>
+</form>
+
+<div class="row">
+    <div class="col-md-12">
+        <app-list-user-found></app-list-user-found>
+    </div>
+</div>
